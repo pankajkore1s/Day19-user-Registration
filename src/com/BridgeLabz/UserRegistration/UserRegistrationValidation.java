@@ -36,7 +36,7 @@ public class UserRegistrationValidation {
             if (email.matches(emailPattern)) {                                                               //check Input and Pattern
                 System.out.println("'" + email + "'" + " validation success !");
             } else {
-                System.out.println("'" + email + "'" + " validation success !");
+                System.out.println("'" + email + "'" + " validation unsuccessful !");
             }
     }
     public static void validatePhoneNumber() {
@@ -50,12 +50,24 @@ public class UserRegistrationValidation {
             System.out.println("'" + phoneNumber + "'" + " validation unsuccessful !");
         }
     }
+    public static void validatePassword() {
+        System.out.println("Enter Passcode");
+        String password = sc.nextLine();                  //Accept input
+        String passwordPattern = "^(?=.*[a-z]).{8,}$";    //set Pattern
+        Pattern pattern = Pattern.compile(passwordPattern);
+        if (password.matches(passwordPattern)) {           //Check Input And Pattern
+            System.out.println("'" + password + "'" + " validation success !");
+        } else {
+            System.out.println("'" + password + "'" + " validation unsuccessful !");
+        }
+    }
         public static void main (String[]args ){
             System.out.println("Welcome to User Registration Project ");
             validateFirstName();
             validateLastName();
             validateEmail();
             validatePhoneNumber();
+            validatePassword();
         }
     }
 
