@@ -39,11 +39,23 @@ public class UserRegistrationValidation {
                 System.out.println("'" + email + "'" + " validation success !");
             }
     }
+    public static void validatePhoneNumber() {
+        System.out.println("Enter user mobile number: ");
+        String phoneNumber = sc.nextLine();                      //Accept Number
+        String phoneNumberPattern = "^[0-9]{2}[ ]+[0-9]{10}";    //set pattern
+        Pattern pattern = Pattern.compile(phoneNumberPattern);
+        if (phoneNumber.matches(phoneNumberPattern)) {           //Check input and Pattern
+            System.out.println("'" + phoneNumber + "'" + " validation success !");
+        } else {
+            System.out.println("'" + phoneNumber + "'" + " validation unsuccessful !");
+        }
+    }
         public static void main (String[]args ){
             System.out.println("Welcome to User Registration Project ");
             validateFirstName();
             validateLastName();
             validateEmail();
+            validatePhoneNumber();
         }
     }
 
