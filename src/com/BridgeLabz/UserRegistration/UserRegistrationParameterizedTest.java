@@ -53,11 +53,12 @@ class UserRegistrationParameterizedTest {
 	}
 	/**
 	 * Test case actually runs from here
+	 * @throws UserRegistrationException 
 	 */
 	
 	@Test
-	public void TestUserRegistrationTest() {
+	public void TestUserRegistrationTest() throws UserRegistrationException {
 		System.out.println("This is Expected Result " + this.expectedResult);
-		Assert.assertEquals(expectedResult, userRegistration.validateEmail(testEmail));
+		Assert.assertEquals(expectedResult, UserRegistrationValidation.validateEmail(testEmail));
 	}
 }
